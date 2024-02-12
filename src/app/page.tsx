@@ -1,10 +1,10 @@
-import React from 'react';
+import LandingPage from '@/components/Home/LandingPage';
 
 const page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>MY BOILER PLATE FOR NEXT JS</h1>
-    </main>
+    <section className="container min-h-screen">
+      <LandingPage />
+    </section>
   );
 };
 
