@@ -12,4 +12,5 @@ NextShopping is a Next.js application that provides CRUD (Create, Read, Update, 
 
 - **Next.js**: The application is built using Next.js, a React framework for building server-side rendered (SSR) and statically generated (SSG) applications.
 - **React DnD**: React DnD is used for implementing drag and drop functionality for sorting shopping items. (https://react-dnd.github.io/react-dnd/about)
+- **Shadcn**: UI components are styled using Shadcn, providing a sleek and modern design for the application. (https://ui.shadcn.com/)
 - **App Router**: Next.js App Router is used for managing routing within the application.
