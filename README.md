@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Contact Card Lists
 
-## Getting Started
+## Requirements
 
-First, run the development server:
+- [x] Create a Contact Card Lists using ReactJS or NextJS Frameworks Link: [Next.js](https://nextjs.org)
+- [x] Utilize Tailwind CSS for styling and aim to replicate the layout provided.
+- [x] Upon page load, retrieve a list of users from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users) and display it on the screen using a two-column layout with pagination.
+- [x] Generate an image avatar based on user name. e.g. "Leanne Graham" it will be "LG" using [placehold.co](https://placehold.co)
+- [x] Implement a detail page to showcase additional information about the users.
+- [x] Enable the functionality to update user details on the detail page.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [x] As per JSONPLACEHOLDER ( resource will not be really updated on the server but it will be faked as if. ) . Hence added feature when update to save the updated user details via SESSION STORAGE
+- [x] Added skeleton loading on each page
+- [x] Added mobile responsiveness mobile,tablet,desktop
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Bonus features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Add search filter
