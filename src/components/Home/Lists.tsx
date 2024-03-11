@@ -27,13 +27,13 @@ const Lists = () => {
   return (
     <div>
       {usersDataLoading ? (
-        <div className="my-6 grid grid-cols-2 gap-4">
+        <div className="my-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
           {Array.from({ length: 5 }).map((_, index) => (
             <ListsSkeleton key={index} />
           ))}
         </div>
       ) : usersDataMemo && usersDataMemo.length > 0 ? (
-        <div className="my-6 grid grid-cols-2 gap-4">
+        <div className="my-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
           {usersDataMemo.map((item: IUser) => (
             <List key={item.id} item={item} />
           ))}

@@ -90,13 +90,13 @@ const User = ({ singleDataMemo, id }: Props) => {
   return (
     <div>
       <p className="text-xl font-semibold">User Details for @{singleDataMemo?.username}</p>
-      <div className="mt-8 flex">
-        <p className="flex size-32 items-center justify-center bg-[#5172e9] text-4xl text-white">
-          {getInitials(singleDataMemo?.name!)}
+      <div className="mt-8 flex flex-col md:flex-row">
+        <p className="mx-auto flex size-32 items-center justify-center bg-[#5172e9] text-4xl text-white">
+          {getInitials(singleDataMemo?.name! || '')}
         </p>
         <Form {...form}>
-          <form onSubmit={onSubmit} className="w-full space-y-4 px-5">
-            <div className="grid w-full grid-cols-2 items-center gap-4 px-4">
+          <form onSubmit={onSubmit} className="w-full space-y-4 lg:px-5">
+            <div className="grid w-full grid-cols-1 items-center gap-4 px-4 lg:grid-cols-2">
               <FormField
                 control={form.control}
                 name="name"

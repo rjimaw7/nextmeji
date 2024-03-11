@@ -13,7 +13,7 @@ const Navbar = () => {
   const { searchQuery, setSearchQuery } = useGlobalStore();
 
   return (
-    <header className="border-b-1 container mx-auto flex cursor-pointer items-center justify-between border border-x-0 border-t-0 border-black p-5">
+    <header className="border-b-1 container mx-auto flex cursor-pointer flex-col items-center justify-between gap-4 border border-x-0 border-t-0 border-black p-5 md:flex-row md:gap-0">
       <div className="flex items-center  gap-2">
         <Logo />
       </div>

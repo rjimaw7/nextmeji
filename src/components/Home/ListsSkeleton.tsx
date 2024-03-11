@@ -13,10 +13,14 @@ const ListsSkeleton = () => {
             <div className="flex w-full flex-col gap-2">
               <Skeleton className="h-4 w-[250px] bg-gray-400" />
               <Skeleton className="h-4 w-[250px] bg-gray-400" />
+              <div className="flex flex-col gap-2 md:hidden">
+                <Skeleton className="h-4 w-[250px] bg-gray-400" />
+                <Skeleton className="h-4 w-[250px] bg-gray-400" />
+              </div>
             </div>
             <Skeleton className="h-4 w-[250px] bg-gray-400" />
           </div>
-          <div className="flex size-full cursor-pointer flex-col gap-4">
+          <div className="hidden size-full cursor-pointer flex-col gap-4 md:flex">
             <Skeleton className="h-4 w-[250px] bg-gray-400" />
             <Skeleton className="h-4 w-[250px] bg-gray-400" />
             <Skeleton className="h-4 w-[250px] bg-gray-400" />
