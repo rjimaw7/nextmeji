@@ -1,10 +1,14 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/no-array-index-key */
 
 'use client';
 
+import { useDebounce } from '@uidotdev/usehooks';
 import React, { useMemo, useState } from 'react';
 
+import type { IUser } from '@/shared/interfaces/IUser';
 import { useUserService } from '@/shared/service/userService';
+import useGlobalStore from '@/shared/zustand/globalStore';
 
 import List from './List';
 import ListsSkeleton from './ListsSkeleton';
@@ -13,8 +17,10 @@ import PaginationArrows from './PaginationArrows';
 const Lists = () => {
   const [start, setStart] = useState(0);
   const { fetchUsers } = useUserService();
+  const { searchQuery } = useGlobalStore();
+  const debouncedSearchQuery = useDebounce(searchQuery, 300);
 
-  const { data: usersData, isLoading: usersDataLoading } = fetchUsers(start);
+  const { data: usersData, isLoading: usersDataLoading } = fetchUsers(start, debouncedSearchQuery);
 
   const usersDataMemo = useMemo(() => usersData, [usersData]);
 
@@ -26,11 +32,16 @@ const Lists = () => {
             <ListsSkeleton key={index} />
           ))}
         </div>
-      ) : (
+      ) : usersDataMemo && usersDataMemo.length > 0 ? (
         <div className="my-6 grid grid-cols-2 gap-4">
-          {usersDataMemo?.map((item) => <List key={item.id} item={item} />)}
+          {usersDataMemo.map((item: IUser) => (
+            <List key={item.id} item={item} />
+          ))}
         </div>
+      ) : (
+        <p className="text-center text-2xl font-bold">No Users Found</p>
       )}
+
       <PaginationArrows start={start} setStart={setStart} usersDataLoading={usersDataLoading} />
     </div>
   );
