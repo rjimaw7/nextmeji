@@ -1,11 +1,14 @@
-import React from 'react';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
-const page = () => {
+import Home from '@/components/Home/Home';
+import getQueryClient from '@/lib/getQueryClient';
+
+const Main = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>MY BOILER PLATE FOR NEXT JS</h1>
-    </main>
+    <HydrationBoundary state={dehydrate(getQueryClient())}>
+      <Home />
+    </HydrationBoundary>
   );
 };
 
-export default page;
+export default Main;
