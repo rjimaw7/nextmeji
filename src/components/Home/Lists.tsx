@@ -31,7 +31,7 @@ const Lists = () => {
           {usersDataMemo?.map((item) => <List key={item.id} item={item} />)}
         </div>
       )}
-      {!usersDataLoading && <PaginationArrows start={start} setStart={setStart} />}
+      <PaginationArrows start={start} setStart={setStart} usersDataLoading={usersDataLoading} />
     </div>
   );
 };

@@ -12,7 +12,16 @@ export const useUserDao = () => {
     return response.data;
   };
 
+  const fetchSingleUser = async (id: string) => {
+    const response = await GET<IUser>({
+      url: `/users/${id}`
+    });
+
+    return response.data;
+  };
+
   return {
-    fetchUsers
+    fetchUsers,
+    fetchSingleUser
   };
 };

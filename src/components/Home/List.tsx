@@ -1,4 +1,5 @@
 import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 import { getInitials } from '@/lib/utils';
@@ -31,10 +32,13 @@ const List = ({ item }: Props) => {
             <p className="text-sm">
               Website: <span className="text-[#5172e9]">{item.website}</span>
             </p>
-            <div className="flex w-1/2 items-center justify-between rounded-full border border-black px-2 py-1 hover:bg-gray-300">
+            <Link
+              href={`/users/${item.id}`}
+              className="flex w-1/2 items-center justify-between rounded-full border border-black px-2 py-1 hover:bg-gray-300"
+            >
               <p className="text-sm">Details</p>
               <ChevronRight className="text-gray-500" />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

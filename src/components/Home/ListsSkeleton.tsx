@@ -4,7 +4,7 @@ import { Skeleton } from '../ui/skeleton';
 
 const ListsSkeleton = () => {
   return (
-    <div>
+    <div className="">
       <div className="flex size-full items-start justify-start gap-2">
         <Skeleton className="size-32 rounded-xl bg-gray-400" />
 

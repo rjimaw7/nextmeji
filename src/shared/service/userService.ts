@@ -5,7 +5,7 @@ import { useUserDao } from '../dao/userDao';
 import type { IUser } from '../interfaces/IUser';
 
 export const useUserService = () => {
-  const { fetchUsers: fetchUsersDao } = useUserDao();
+  const { fetchUsers: fetchUsersDao, fetchSingleUser: fetchSingleUserDao } = useUserDao();
 
   const fetchUsers = (start: number) => {
     return useQuery<IUser[], Error>({
@@ -14,7 +14,15 @@ export const useUserService = () => {
     });
   };
 
+  const fetchSingleUser = (id: string) => {
+    return useQuery<IUser, Error>({
+      queryKey: ['single_user', id],
+      queryFn: () => fetchSingleUserDao(id)
+    });
+  };
+
   return {
-    fetchUsers
+    fetchUsers,
+    fetchSingleUser
   };
 };
